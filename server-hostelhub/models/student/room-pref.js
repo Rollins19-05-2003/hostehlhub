@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const roomPrefSchema = new mongoose.Schema({
     studentId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Student",
+        type: Number,
+        unique: true,
         required: true,
     },
     roomType: {

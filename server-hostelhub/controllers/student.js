@@ -11,4 +11,4 @@ const createRoomPref = async (req, res) => {
     }
 };
 
-export default { createRoomPref };
+export { createRoomPref };
