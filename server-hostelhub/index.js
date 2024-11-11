@@ -1,14 +1,14 @@
-const express = require("express")
-const cors = require('cors')
+import express from "express"
+import cors from 'cors'
 const app = express();
+import studentRoutes from './routes/student.js'
 const port = 3001
-const connectDB = require('./utils/conn')
+import connectDB from './utils/conn.js'
 
 connectDB();
 app.use(cors());
-app.get('/', (req,res)=>{
-    res.send("hello")
-  })
+app.use(express.json());
+app.use('/student', studentRoutes);
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
