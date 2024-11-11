@@ -52,4 +52,16 @@ const getPrefferedRoommate = async (req, res) => {
     }
 };
 
-export { createRoomPref, getPrefferedRoommate };
+const submitFeedback = async (req, res) => {
+  const { message } = req.body;
+  try {
+    const feedback = new Feedback({ message });
+    await feedback.save();
+    res.status(201).json({ success: true, message: 'Feedback submitted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, error: 'Failed to submit feedback' });
+  }
+};
+
+
+export { createRoomPref, getPrefferedRoommate, submitFeedback };
