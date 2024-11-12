@@ -23,6 +23,10 @@ const roomPrefSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    state:{
+        type: String,
+        required:true
+    },
     hobbies: {
         type: [String],
         enum: ["Reading", "Writing", "Sports", "Music", "Dance", "Art", "Crafts", "Cooking", "Gardening", "Painting", "Drawing", "Singing", "Dancing", "Acting", "Writing", "Reading", "Sports", "Music", "Dance", "Art", "Crafts", "Cooking", "Gardening", "Painting", "Drawing", "Singing", "Dancing", "Acting"],
